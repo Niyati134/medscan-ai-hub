@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1788184239440,
+      "tag": "0000_create_user_roles_and_admin_audit",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1788271062310,
+      "tag": "0001_restrict_has_role_execute",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1788359208234,
+      "tag": "0002_security_hardening_grants_and_policies",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1788705860349,
+      "tag": "0003_share_password_throttle_columns",
+      "breakpoints": true
+    }
+  ]
+}
