@@ -1,101 +1,130 @@
-# MedScan AI Hub
+# 💊 MedScan AI Hub
 
-Build a modern AI-powered healthcare web app called MedScan AI.
+**AI-Powered Prescription Scanning & Health Insights Platform**
 
-Pages required:
+MedScan AI Hub is a full-stack healthcare web application that helps users digitize prescriptions, explore medicine information, and interact with an AI-powered health assistant through a modern, user-friendly interface.
 
-1. Landing page
+Built with React, TypeScript, TanStack Start, Supabase, and Google Gemini AI.
 
-2. Login page
+## ✨ Features
 
-3. Signup page
+- **🔐 User Authentication** — Sign up, log in, and manage your account.
+- **📄 Prescription Scanning** — Upload prescription images for AI-assisted analysis.
+- **💊 Medicine Insights** — View extracted medicine details, uses, side effects, and related information.
+- **🤖 AI Health Assistant** — Ask health-related questions through the integrated chatbot.
+- **📊 Dashboard** — Access health-related information and application features from one place.
+- **🗂️ Scan History** — Revisit previous scans.
+- **👤 Profile Management** — Access and manage your profile information.
+- **📈 Additional Tools** — Includes medicine price comparison, reminders, health insights, and other supporting features.
+- **🎨 Modern Interface** — Responsive layout, reusable UI components, and theme support.
 
-4. Dashboard page
+## 🛠️ Tech Stack
 
-5. Prescription upload page
+| Category | Technologies |
+|---|---|
+| Frontend | React, TypeScript |
+| Application Framework | TanStack Start |
+| Styling & UI | Tailwind CSS, shadcn/ui |
+| Authentication & Database | Supabase |
+| AI Integration | Google Gemini API |
+| Build Tool | Vite |
+| Package Management | npm |
 
-6. Scan results page
+## ⚙️ Getting Started
 
-7. Chatbot assistant page
+### Prerequisites
 
-8. User profile page
+- Node.js and npm
+- A Supabase project
+- A Google Gemini API key
 
-9. Scan history page
+### 1. Clone the repository
 
-Features:
+```bash
+git clone https://github.com/Niyati134/medscan-ai-hub.git
+cd medscan-ai-hub
+```
 
-- Beautiful modern UI
+### 2. Install dependencies
 
-- Medical healthcare theme
+```bash
+npm install
+```
 
-- Dark/light mode
+### 3. Configure environment variables
 
-- Mobile responsive
+Copy the example environment file:
 
-- Sidebar navigation
+**Windows PowerShell**
+```powershell
+Copy-Item .env.example .env
+```
 
-- Upload prescription image
+Open `.env` and enter your own configuration values obtained from Supabase and Google AI Studio.
 
-- Drag and drop upload box
+Keep all real API keys and credentials private. Never commit your `.env` file.
 
-- AI scanning animation
+### 4. Configure Supabase
 
-- Medicine cards showing:
+Review the SQL migrations in `supabase/migrations/` and apply the required migrations to a dedicated Supabase project using the appropriate Supabase migration workflow or SQL Editor.
 
-  - medicine name
+Use a dedicated project for this application, and review database permissions and security policies before applying migrations to any existing database.
 
-  - uses
+### 5. Start the development server
 
-  - side effects
-
-  - price
-
-  - equivalent medicines
-
-- Floating AI chatbot
-
-- Search bar
-
-- Loading animations
-
-- Modern cards and tables
-
-- Tailwind CSS
-
-- React + TypeScript
-
-- Use shadcn/ui components
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/0e3bcd2c-25ed-4bcb-8259-557a9eeb7461).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
 npm run dev
 ```
 
-## Local setup (Supabase + Gemini)
+Open the local URL displayed in your terminal. The default development address is typically `http://localhost:8080`.
 
-1. `npm install`
-2. Copy `.env.example` to `.env` and fill in your Supabase and Gemini values (`.env` is git-ignored).
-3. Open the Supabase **SQL Editor**, paste `supabase/migrations/20261018000000_reconcile_schema_with_code.sql` and run it.
-   It is idempotent (safe to re-run) and never drops data. It creates/repairs every table, RLS policy and the private
-   `prescriptions` storage bucket that the code expects.
-4. `npm run dev` → http://localhost:8080/
+## 🔑 Environment Variables
 
-AI calls use `gemini-3.8-flash` with low reasoning effort and fall back to `gemini-3.6-flash` on overload/quota/timeouts.
-Override with `GEMINI_MODEL` / `GEMINI_FALLBACK_MODEL` (see `.env.example`). Server logs show per-request timing and token
-usage as `[ai] ok model=... ms=...` lines, which is the first place to look if scans feel slow.
+Refer to `.env.example` for the required variable names and configuration.
+
+The application uses Supabase configuration for authentication and data access, along with a server-side Gemini API key for AI functionality.
+
+Use placeholder values in documentation. Never publish real credentials, service-role keys, or private API keys.
+
+## 🗂️ Project Structure
+
+```text
+medscan-ai-hub/
+├── drizzle/                  # Database schema and migrations
+├── src/
+│   ├── components/           # Reusable UI components
+│   ├── hooks/                # Custom React hooks
+│   ├── integrations/         # Supabase integrations
+│   ├── lib/                  # Application and AI logic
+│   └── routes/               # Application pages and routes
+├── supabase/
+│   └── migrations/           # Supabase SQL migrations
+├── .env.example              # Environment variable template
+├── .gitignore
+├── package.json
+└── README.md
+```
+
+## 🔒 Security & Privacy
+
+- Keep `.env` and all real API credentials out of version control.
+- Keep privileged Supabase service-role credentials on the server only.
+- Configure appropriate authentication, database access controls, and Row Level Security (RLS) policies.
+- Review third-party AI processing and data-handling practices before using real or sensitive medical information.
+
+## ⚠️ Medical Disclaimer
+
+MedScan AI Hub is an educational and informational software project. AI-generated prescription interpretations and health information may be incomplete or incorrect and must not replace professional medical advice, diagnosis, or treatment.
+
+Always verify prescription details with a qualified healthcare professional. Do not change medication or dosage based solely on AI-generated results.
+
+## 👩‍💻 Author
+
+**Niyati Chavan**
+
+- GitHub: [@Niyati134](https://github.com/Niyati134)
+- Project Repository: [MedScan AI Hub](https://github.com/Niyati134/medscan-ai-hub)
+
+---
+
+⭐ If you find this project interesting, consider starring the repository.
